@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramiro Giannasi Paid Media</title>
+<meta name="description" content="Meta Ads and Google Ads management for ecommerce and lead-gen brands. Gestión de Meta Ads y Google Ads para ecommerce y captación de leads.">
+<meta name="theme-color" content="#F7F2EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: single-column editorial flow, 1120px wrap; hero splits copy / sample account readout; cases = 1 featured + 2x2 grid */
+:root {
+  --bg: #F7F2EC;
+  --surface: #FFFDFA;
+  --ink: #16121C;
+  --muted: #5C5664;
+  --line: #EDE4DA;
+  --accent: #6A0BB5;
+  --accent-ink: #FFFDFA;
+  --accent-soft: #F3E7FF;
+  --bar: #EADAFF;
+  color-scheme: light;
+  --font-display: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-mono: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.015em; line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.4vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.3rem; line-height: 1.2; }
+p { margin: 0; }
+a { color: inherit; }
+.eyebrow {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.92rem; letter-spacing: 0;
+  color: var(--accent); margin-bottom: 14px;
+}
+.muted { color: var(--muted); }
+section { padding-block: 88px; }
+.section-head { display: flex; flex-direction: column; gap: 14px; max-width: 700px; margin-bottom: 44px; }
+.section-head p { color: var(--muted); }
+
+/* focus */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 600 0.98rem var(--font-body); text-decoration: none; cursor: pointer;
+  padding: 14px 22px; border-radius: 999px; border: 1px solid transparent;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
+
+/* header */
+header.site {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; gap: 24px; min-height: 68px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; margin-right: auto; }
+.brand small { font: 500 0.76rem var(--font-body); color: var(--muted); margin-top: 3px; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { text-decoration: none; font-size: 0.93rem; color: var(--muted); }
+.nav-links a:hover { color: var(--ink); }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.lang button {
+  font: 600 0.82rem var(--font-body); border: 0; background: transparent; color: var(--muted);
+  padding: 7px 12px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.nav .btn { padding: 10px 18px; font-size: 0.9rem; }
+@media (max-width: 900px) { .nav-links { display: none; } }
+@media (max-width: 560px) { .nav .btn { display: none; } .nav { gap: 12px; } }
+
+/* hero */
+.hero { padding-block: 72px 56px; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+.hero-copy { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.hero-copy .lede { font-size: 1.14rem; color: var(--muted); max-width: 52ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-note { font-size: 0.88rem; color: var(--muted); }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero { padding-block: 48px 40px; } }
+
+.readout { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; min-width: 0; }
+.readout-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.mono { font-family: var(--font-body); font-weight: 600; font-size: 0.82rem; color: var(--muted); }
+.pill { font: 600 0.74rem var(--font-body); background: var(--accent-soft); color: var(--accent); padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+.kpi .v { font: 600 1.45rem var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.kpi .v.hi { color: var(--accent); }
+.kpi .l { font-size: 0.76rem; color: var(--muted); line-height: 1.3; margin-top: 2px; }
+.bars {
+  display: flex; align-items: flex-end; gap: 8px; height: 130px; padding-top: 6px;
+  background: repeating-linear-gradient(to top, transparent 0, transparent 32px, var(--line) 32px, var(--line) 33px);
+}
+.bars span { flex: 1; background: var(--bar); border-radius: 4px 4px 0 0; min-width: 0; }
+.bars span:last-child { background: var(--accent); }
+.bar-axis { display: flex; justify-content: space-between; margin-top: 8px; }
+
+.tools { border-block: 1px solid var(--line); padding-block: 22px; }
+.tools .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; }
+.tools ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.tools li { font: 600 0.95rem var(--font-display); }
+
+/* plain words */
+.plain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card p { color: var(--muted); font-size: 0.98rem; }
+.card.tint { background: var(--accent-soft); border-color: transparent; }
+.gloss { margin: 4px 0 0; display: grid; gap: 12px; }
+.gloss dt { font: 600 0.95rem var(--font-mono); color: var(--accent); }
+.gloss dd { margin: 0; font-size: 0.95rem; color: var(--ink); }
+@media (max-width: 900px) { .plain-grid { grid-template-columns: 1fr; } section { padding-block: 64px; } }
+
+/* cases */
+.notice { border: 1px dashed var(--line); border-radius: 12px; padding: 14px 18px; font-size: 0.9rem; color: var(--muted); margin-bottom: 28px; max-width: 760px; }
+.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-width: 0; transition: border-color .15s ease; }
+.case:hover { border-color: var(--accent); }
+.case.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; }
+.case-main { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.case-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.case dl { margin: 0; display: grid; gap: 10px; }
+.case dt { font: 700 0.85rem var(--font-body); color: var(--accent); }
+.case dd { margin: 2px 0 0; color: var(--muted); font-size: 0.96rem; }
+.metrics { display: grid; gap: 14px; align-content: start; }
+.case:not(.feature) .metrics { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); border-top: 1px solid var(--line); padding-top: 18px; margin-top: auto; }
+.case.feature .metrics { border-left: 1px solid var(--line); padding-left: 36px; }
+.metric .ml { font-size: 0.8rem; color: var(--muted); }
+.metric .mv { font: 600 1.5rem var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.case.feature .metric .mv { font-size: 2rem; }
+@media (max-width: 900px) {
+  .cases { grid-template-columns: 1fr; }
+  .case.feature { grid-template-columns: 1fr; gap: 22px; }
+  .case.feature .metrics { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 18px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+}
+
+/* services */
+.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.svc .best { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); }
+.svc .best b { font: 700 0.85rem var(--font-body); color: var(--accent); display: block; margin-bottom: 2px; }
+@media (max-width: 760px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* process */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+.steps li { border-top: 2px solid var(--ink); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; counter-increment: s; min-width: 0; }
+.steps li::before { content: "0" counter(s); font: 700 0.95rem var(--font-body); color: var(--accent); }
+.steps p { color: var(--muted); font-size: 0.96rem; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* about */
+.about { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 56px; align-items: center; }
+.mono-block { aspect-ratio: 1; max-width: 100%; border-radius: 22px; background: var(--accent-soft); display: grid; place-items: center; font: 700 clamp(5rem, 14vw, 9rem) var(--font-display); letter-spacing: -0.04em; color: var(--accent); }
+.about-copy { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.about-copy p { color: var(--muted); max-width: 56ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 0.85rem; border: 1px solid var(--line); background: var(--surface); padding: 7px 14px; border-radius: 999px; }
+@media (max-width: 800px) { .about { grid-template-columns: 1fr; gap: 28px; } .mono-block { max-width: 220px; } }
+
+/* faq */
+.faq { max-width: 800px; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); }
+summary { list-style: none; cursor: pointer; padding: 22px 0; font: 600 1.12rem var(--font-display); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font: 500 1.5rem var(--font-mono); color: var(--accent); transition: transform .2s ease; flex: none; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { color: var(--muted); padding: 0 40px 24px 0; max-width: 64ch; }
+
+/* contact */
+.contact { background: var(--accent-soft); color: var(--ink); border-radius: 28px; padding: clamp(32px, 6vw, 72px); display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.contact p { color: var(--muted); max-width: 52ch; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 0.95rem; }
+.mail code { font: 500 0.95rem var(--font-mono); background: var(--surface); padding: 8px 12px; border-radius: 8px; overflow-wrap: anywhere; user-select: all; }
+.mail button { font: 600 0.82rem var(--font-body); background: transparent; color: var(--ink); border: 1px solid var(--ink); padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.mail button:hover { background: var(--surface); }
+
+footer { padding-block: 40px; border-top: 1px solid var(--line); margin-top: 88px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 0.88rem; color: var(--muted); }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Ramiro Giannasi Paid Media">Ramiro Giannasi<small data-i18n="brand_sub"></small></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#work" data-i18n="nav_work"></a>
+      <a href="#services" data-i18n="nav_services"></a>
+      <a href="#process" data-i18n="nav_process"></a>
+      <a href="#faq" data-i18n="nav_faq"></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Idioma">
+      <button type="button" id="btn-es" data-lang="es" aria-pressed="false">ES</button>
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary js-book" href="#contact" data-i18n="cta_nav"></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero_eyebrow"></div>
+        <h1 data-i18n="hero_h1"></h1>
+        <p class="lede" data-i18n="hero_sub"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary js-book" href="#contact" data-i18n="cta_book"></a>
+          <a class="btn btn-ghost" href="#work" data-i18n="hero_secondary"></a>
+        </div>
+        <p class="hero-note" data-i18n="hero_note"></p>
+      </div>
+
+      <aside class="readout" aria-label="Sample account readout">
+        <div class="readout-top">
+          <span class="mono" data-i18n="ro_label"></span>
+          <span class="pill" data-i18n="tag_illustrative"></span>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="v" data-i18n="ro_spend_v"></div><div class="l" data-i18n="ro_spend"></div></div>
+          <div class="kpi"><div class="v" data-i18n="ro_sales_v"></div><div class="l" data-i18n="ro_sales"></div></div>
+          <div class="kpi"><div class="v hi" data-i18n="ro_roas_v"></div><div class="l">ROAS</div></div>
+        </div>
+        <div class="mono" style="margin-bottom:8px" data-i18n="ro_weeks"></div>
+        <div class="bars" role="img" aria-label="ROAS by week: 1.8, 2.0, 2.2, 2.5, 2.7, 2.9, 3.0, 3.1">
+          <span style="height:58%"></span><span style="height:64%"></span><span style="height:71%"></span><span style="height:81%"></span>
+          <span style="height:87%"></span><span style="height:94%"></span><span style="height:97%"></span><span style="height:100%"></span>
+        </div>
+        <div class="bar-axis"><span class="mono">1.8×</span><span class="mono">3.1×</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="tools">
+    <div class="wrap">
+      <span class="mono" data-i18n="tools_label"></span>
+      <ul>
+        <li>Meta Ads</li><li>Google Ads</li><li>Shopify</li><li>GA4</li><li>Google Tag Manager</li><li>Looker Studio</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="plain">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="plain_eyebrow"></div>
+        <h2 data-i18n="plain_h2"></h2>
+      </div>
+      <div class="plain-grid">
+        <div class="card"><h3 data-i18n="pl1_t"></h3><p data-i18n="pl1_d"></p></div>
+        <div class="card"><h3 data-i18n="pl2_t"></h3><p data-i18n="pl2_d"></p></div>
+        <div class="card tint">
+          <h3 data-i18n="pl3_t"></h3>
+          <dl class="gloss">
+            <div><dt>ROAS</dt><dd data-i18n="g_roas"></dd></div>
+            <div><dt>CPA</dt><dd data-i18n="g_cpa"></dd></div>
+            <div><dt>CPL</dt><dd data-i18n="g_cpl"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="padding-top:24px">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="cases_eyebrow"></div>
+        <h2 data-i18n="cases_h2"></h2>
+      </div>
+      <div class="notice" data-i18n="cases_note"></div>
+      <div class="cases" id="cases"></div>
+    </div>
+  </section>
+
+  <section id="services" style="padding-top:24px">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="svc_eyebrow"></div>
+        <h2 data-i18n="svc_h2"></h2>
+        <p data-i18n="svc_sub"></p>
+      </div>
+      <div class="svc-grid">
+        <div class="card svc"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p><div class="best"><b data-i18n="lbl_best"></b><span data-i18n="s1_b"></span></div></div>
+        <div class="card svc"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p><div class="best"><b data-i18n="lbl_best"></b><span data-i18n="s2_b"></span></div></div>
+        <div class="card svc"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p><div class="best"><b data-i18n="lbl_best"></b><span data-i18n="s3_b"></span></div></div>
+        <div class="card svc"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p><div class="best"><b data-i18n="lbl_best"></b><span data-i18n="s4_b"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding-top:24px">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="proc_eyebrow"></div>
+        <h2 data-i18n="proc_h2"></h2>
+      </div>
+      <ol class="steps">
+        <li><h3 data-i18n="p1_t"></h3><p data-i18n="p1_d"></p></li>
+        <li><h3 data-i18n="p2_t"></h3><p data-i18n="p2_d"></p></li>
+        <li><h3 data-i18n="p3_t"></h3><p data-i18n="p3_d"></p></li>
+        <li><h3 data-i18n="p4_t"></h3><p data-i18n="p4_d"></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top:24px">
+    <div class="wrap about">
+      <div class="mono-block" aria-hidden="true">RG</div>
+      <div class="about-copy">
+        <div class="eyebrow" data-i18n="about_eyebrow"></div>
+        <h2 data-i18n="about_h2"></h2>
+        <p data-i18n="about_p1"></p>
+        <p data-i18n="about_p2"></p>
+        <div class="chips">
+          <span class="chip" data-i18n="chip1"></span>
+          <span class="chip" data-i18n="chip2"></span>
+          <span class="chip" data-i18n="chip3"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:24px">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="faq_eyebrow"></div>
+        <h2 data-i18n="faq_h2"></h2>
+      </div>
+      <div class="faq">
+        <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+        <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+        <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+        <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+        <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:24px; padding-bottom:0">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow" data-i18n="contact_eyebrow"></div>
+        <h2 data-i18n="contact_h2"></h2>
+        <p data-i18n="contact_sub"></p>
+        <a class="btn btn-primary js-book-ext" id="book-main" href="#contact" data-i18n="cta_book" hidden></a>
+        <div class="mail">
+          <span data-i18n="contact_email"></span>
+          <code id="mail-text"></code>
+          <button type="button" id="copy-mail" data-i18n="copy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span id="foot-left"></span>
+    <span><a id="foot-li" href="#" target="_blank" rel="noopener noreferrer" hidden>LinkedIn</a></span>
+  </div>
+</footer>
+
+<script id="data">
+var I18N = {
+  en: {
+    brand_sub: "Paid media",
+    nav_work: "Work", nav_services: "Services", nav_process: "Process", nav_faq: "FAQ",
+    cta_nav: "Book a call", cta_book: "Book a free 30-min audit",
+    hero_eyebrow: "Meta & Google Ads for online brands",
+    hero_h1: "More sales from every dollar you put into ads.",
+    hero_sub: "I manage Meta and Google Ads for ecommerce and lead-gen brands. Clear strategy, careful testing and reports in plain language, from one person you can talk to directly.",
+    hero_secondary: "See sample scenarios",
+    hero_note: "Free 30-minute call. No account access needed.",
+    ro_label: "Sample account readout", tag_illustrative: "Illustrative",
+    ro_spend_v: "$12,400", ro_spend: "Ad spend, month", ro_sales_v: "$38,440", ro_sales: "Sales from ads", ro_roas_v: "3.1×",
+    ro_weeks: "Weekly ROAS, last 8 weeks",
+    tools_label: "Tools I work with",
+    plain_eyebrow: "New to paid ads?", plain_h2: "Never run ads before? Start here.",
+    pl1_t: "What paid media is",
+    pl1_d: "You pay platforms like Instagram, Facebook and Google to show your product to people likely to want it. You pay for attention, and every dollar can be measured.",
+    pl2_t: "What I do",
+    pl2_d: "I set up the campaigns, test what works, cut what does not and move budget to where it earns. You get a short report you can actually read.",
+    pl3_t: "Three numbers worth knowing",
+    g_roas: "Sales for every $1 spent on ads.", g_cpa: "What it costs to win one customer.", g_cpl: "What it costs to get one interested contact.",
+    cases_eyebrow: "Sample scenarios", cases_h2: "Five situations I know how to work on.",
+    cases_note: "These five cases are illustrative scenarios modeled on common account situations. They are not results from named clients. Real case studies will replace them as projects close.",
+    lbl_challenge: "The situation", lbl_action: "What I would do",
+    lbl_best: "Best for",
+    svc_eyebrow: "Services", svc_h2: "Pick the level of help you need.",
+    svc_sub: "Start with a diagnosis, or hand over the day-to-day. Scope and pricing are agreed after the free call.",
+    s1_t: "Account audit", s1_d: "A clear diagnosis of your Meta and Google Ads accounts: structure, tracking, audiences, creative and budget. You get a prioritized list of fixes.", s1_b: "Brands already spending that are unsure why results stalled.",
+    s2_t: "Strategy & action plan", s2_d: "A 90-day plan built around your margins and goals: what to test, in what order and what success looks like.", s2_b: "Brands about to launch or scale.",
+    s3_t: "Campaign management", s3_d: "Setup, launch and weekly optimization on Meta and Google Ads, with tracking verified before any budget is spent.", s3_b: "Teams that want a hands-on partner.",
+    s4_t: "Creative direction", s4_d: "Angles, hooks and briefs for ads built to be tested, so your designers or UGC creators know what to make next.", s4_b: "Brands whose ads lose steam fast.",
+    proc_eyebrow: "Process", proc_h2: "One process, from first signal to next decision.",
+    p1_t: "Diagnose", p1_d: "Review the account, tracking, goals and margins to find where money is leaking.",
+    p2_t: "Prioritize", p2_d: "Rank what to fix and test by expected impact, and agree on what success means.",
+    p3_t: "Launch", p3_d: "Put the plan live, with tracking checked before budget is spent.",
+    p4_t: "Improve", p4_d: "Weekly decisions, a monthly report in plain language, then the next test.",
+    about_eyebrow: "The person behind the account", about_h2: "I'm Ramiro Giannasi.",
+    about_p1: "I help ecommerce and lead-gen brands make clearer decisions on Meta and Google Ads. You work directly with me: no hand-offs, no layers of account managers.",
+    about_p2: "I trained in agency teams managing international accounts, and I explain every decision so you always know where your budget goes and why.",
+    chip1: "Certified in Google Ads and Meta Ads", chip2: "Agency-trained", chip3: "English & Spanish",
+    faq_eyebrow: "FAQ", faq_h2: "Before we talk.",
+    q1: "Who is this for?", a1: "Brands that sell online or generate leads, whether you already run ads or are about to start. If you are not sure where you stand, the free call is for that.",
+    q2: "What happens on the free call?", a2: "30 minutes about your business, your goals and your current ads. No account access needed. A full written audit is scoped separately.",
+    q3: "Can you work with my team?", a3: "Yes. I brief your designers, UGC creators and developers on what the ads and the tracking need.",
+    q4: "Do you guarantee results?", a4: "No. Results depend on your product, offer, margins and budget. What I commit to is structured testing, honest reporting and clear decisions.",
+    q5: "Which languages and time zones?", a5: "I work in English and Spanish from Buenos Aires, and overlap with business hours across the Americas and Europe.",
+    contact_eyebrow: "Your next move", contact_h2: "A clearer direction starts with a call.",
+    contact_sub: "Free. 30 minutes. No account access needed.",
+    contact_email: "Or write to", copy: "Copy", copied: "Copied",
+    foot_left: "© 2026 Ramiro Giannasi · Paid media · Buenos Aires"
+  },
+  es: {
+    brand_sub: "Paid media",
+    nav_work: "Casos", nav_services: "Servicios", nav_process: "Proceso", nav_faq: "Preguntas",
+    cta_nav: "Agendar llamada", cta_book: "Agenda una auditoría gratuita de 30 min",
+    hero_eyebrow: "Meta y Google Ads para marcas online",
+    hero_h1: "Más ventas por cada dólar que inviertes en anuncios.",
+    hero_sub: "Gestiono Meta Ads y Google Ads para ecommerce y marcas que captan leads. Estrategia clara, pruebas ordenadas y reportes en lenguaje simple, con una sola persona a cargo con quien hablas directamente.",
+    hero_secondary: "Ver escenarios de ejemplo",
+    hero_note: "Llamada gratuita de 30 minutos. No necesito acceso a tu cuenta.",
+    ro_label: "Ejemplo de lectura de cuenta", tag_illustrative: "Ilustrativo",
+    ro_spend_v: "US$12.400", ro_spend: "Inversión del mes", ro_sales_v: "US$38.440", ro_sales: "Ventas por anuncios", ro_roas_v: "3,1×",
+    ro_weeks: "ROAS semanal, últimas 8 semanas",
+    tools_label: "Herramientas con las que trabajo",
+    plain_eyebrow: "¿Primera vez con anuncios?", plain_h2: "¿Nunca hiciste publicidad paga? Empieza aquí.",
+    pl1_t: "Qué es el paid media",
+    pl1_d: "Pagas a plataformas como Instagram, Facebook y Google para mostrar tu producto a personas con probabilidad de quererlo. Pagas por atención y cada dólar se puede medir.",
+    pl2_t: "Qué hago yo",
+    pl2_d: "Armo las campañas, pruebo qué funciona, corto lo que no y muevo el presupuesto a donde rinde. Recibes un reporte corto que realmente se entiende.",
+    pl3_t: "Tres números que conviene conocer",
+    g_roas: "Ventas por cada US$1 invertido en anuncios.", g_cpa: "Lo que cuesta conseguir un cliente.", g_cpl: "Lo que cuesta conseguir un contacto interesado.",
+    cases_eyebrow: "Escenarios de ejemplo", cases_h2: "Cinco situaciones en las que sé cómo trabajar.",
+    cases_note: "Estos cinco casos son escenarios ilustrativos, basados en situaciones comunes de cuentas publicitarias. No son resultados de clientes con nombre. Los reemplazaré por casos reales a medida que cierren los proyectos.",
+    lbl_challenge: "La situación", lbl_action: "Qué haría",
+    lbl_best: "Ideal para",
+    svc_eyebrow: "Servicios", svc_h2: "Elige el nivel de ayuda que necesitas.",
+    svc_sub: "Empieza con un diagnóstico o delega el día a día. El alcance y el precio se acuerdan después de la llamada gratuita.",
+    s1_t: "Auditoría de cuenta", s1_d: "Un diagnóstico claro de tus cuentas de Meta y Google Ads: estructura, seguimiento, audiencias, creatividades y presupuesto. Recibes una lista priorizada de mejoras.", s1_b: "Marcas que ya invierten y no saben por qué los resultados se estancaron.",
+    s2_t: "Estrategia y plan de acción", s2_d: "Un plan de 90 días basado en tus márgenes y objetivos: qué probar, en qué orden y cómo se ve el éxito.", s2_b: "Marcas que van a lanzar o escalar.",
+    s3_t: "Gestión de campañas", s3_d: "Configuración, lanzamiento y optimización semanal en Meta y Google Ads, con el seguimiento verificado antes de gastar presupuesto.", s3_b: "Equipos que buscan un socio que ponga las manos en la cuenta.",
+    s4_t: "Dirección creativa", s4_d: "Ángulos, ganchos y briefs para anuncios pensados para testear, así tus diseñadores o creadores UGC saben qué producir después.", s4_b: "Marcas cuyos anuncios pierden fuerza rápido.",
+    proc_eyebrow: "Proceso", proc_h2: "Un solo proceso, de la primera señal a la siguiente decisión.",
+    p1_t: "Diagnosticar", p1_d: "Reviso la cuenta, el seguimiento, los objetivos y los márgenes para ver dónde se pierde dinero.",
+    p2_t: "Priorizar", p2_d: "Ordeno qué corregir y probar según el impacto esperado, y definimos qué significa el éxito.",
+    p3_t: "Lanzar", p3_d: "Pongo el plan en marcha, con el seguimiento verificado antes de invertir.",
+    p4_t: "Mejorar", p4_d: "Decisiones semanales, un reporte mensual en lenguaje simple y la siguiente prueba.",
+    about_eyebrow: "La persona detrás de la cuenta", about_h2: "Soy Ramiro Giannasi.",
+    about_p1: "Ayudo a marcas de ecommerce y de captación de leads a tomar decisiones más claras en Meta y Google Ads. Trabajas directamente conmigo: sin traspasos ni capas de ejecutivos de cuenta.",
+    about_p2: "Me formé en equipos de agencia gestionando cuentas internacionales, y explico cada decisión para que siempre sepas a dónde va tu presupuesto y por qué.",
+    chip1: "Certificado en Google Ads y Meta Ads", chip2: "Formación en agencia", chip3: "Inglés y español",
+    faq_eyebrow: "Preguntas frecuentes", faq_h2: "Antes de hablar.",
+    q1: "¿Para quién es?", a1: "Para marcas que venden online o captan leads, ya sea que ya hagan anuncios o estén por empezar. Si no sabes en qué punto estás, la llamada gratuita sirve para eso.",
+    q2: "¿Qué pasa en la llamada gratuita?", a2: "30 minutos sobre tu negocio, tus objetivos y tus anuncios actuales. No necesito acceso a tu cuenta. Una auditoría escrita completa se define aparte.",
+    q3: "¿Puedes trabajar con mi equipo?", a3: "Sí. Brifeo a tus diseñadores, creadores UGC y desarrolladores sobre lo que necesitan los anuncios y el seguimiento.",
+    q4: "¿Garantizas resultados?", a4: "No. Los resultados dependen de tu producto, tu oferta, tus márgenes y tu presupuesto. Me comprometo a probar de forma ordenada, reportar con honestidad y tomar decisiones claras.",
+    q5: "¿En qué idiomas y husos horarios trabajas?", a5: "Trabajo en inglés y español desde Buenos Aires, y coincido con el horario laboral de América y Europa.",
+    contact_eyebrow: "Tu siguiente paso", contact_h2: "Una dirección más clara empieza con una llamada.",
+    contact_sub: "Gratis. 30 minutos. No necesito acceso a tu cuenta.",
+    contact_email: "O escríbeme a", copy: "Copiar", copied: "Copiado",
+    foot_left: "© 2026 Ramiro Giannasi · Paid media · Buenos Aires"
+  }
+};
+
+var CASES = {
+  en: [
+    { tag: "Apparel · Shopify · Meta Ads", period: "90 days", t: "Getting a clothing brand past a ROAS plateau",
+      c: "ROAS sat near 1.8× for months and one ad set consumed most of the budget.",
+      a: "Rebuild the account around three audiences, run a weekly creative test and clean up purchase tracking.",
+      m: [["ROAS", "1.8× → 3.1×"], ["Cost per purchase", "−32%"], ["Monthly ad spend", "~$12K"]] },
+    { tag: "Home goods · Shopify · Google Shopping & PMax", period: "120 days", t: "Stopping budget from leaking into low-margin products",
+      c: "Most spend went to best sellers with thin margins and to brand searches that would have converted anyway.",
+      a: "Split products by margin, keep brand traffic out of prospecting and fix product feed titles.",
+      m: [["ROAS", "2.9× → 4.2×"], ["Revenue from ads", "+45%"]] },
+    { tag: "B2B software · Lead gen · Google Search", period: "100 days", t: "Fewer leads, better leads",
+      c: "Cost per lead looked fine, but sales said most demo requests were not a fit.",
+      a: "Target keywords by buying intent, add negative keywords and qualifying questions to the form.",
+      m: [["Cost per lead", "$142 → $87"], ["Qualified leads", "31% → 52%"]] },
+    { tag: "Home services · Lead gen · Meta Ads", period: "60 days", t: "Turning cheap leads into booked jobs",
+      c: "Lead forms brought many contacts, but few people answered the phone.",
+      a: "Move the flow to click-to-WhatsApp with a short qualifying message and agree a same-day reply rule with the client.",
+      m: [["Cost per booked job", "$64 → $41"], ["Booking rate", "14% → 23%"]] },
+    { tag: "Beauty · DTC · Meta Ads", period: "6 weeks", t: "Finding the ad angle that actually sells",
+      c: "Three near-identical ads had run for months and performance was fading.",
+      a: "Plan 12 hooks across 4 angles, test them in a controlled structure and scale only the winners.",
+      m: [["CTR on winning ad", "+58%"], ["Cost per purchase", "−24%"], ["Hooks tested", "12"]] }
+  ],
+  es: [
+    { tag: "Indumentaria · Shopify · Meta Ads", period: "90 días", t: "Sacar a una marca de ropa de su estancamiento de ROAS",
+      c: "El ROAS llevaba meses cerca de 1,8× y un solo conjunto de anuncios consumía casi todo el presupuesto.",
+      a: "Reconstruir la cuenta en torno a tres audiencias, correr un test creativo semanal y ordenar el seguimiento de compras.",
+      m: [["ROAS", "1,8× → 3,1×"], ["Costo por compra", "−32%"], ["Inversión mensual", "~US$12K"]] },
+    { tag: "Hogar · Shopify · Google Shopping y PMax", period: "120 días", t: "Frenar la fuga de presupuesto hacia productos de bajo margen",
+      c: "Gran parte de la inversión iba a los más vendidos con márgenes finos y a búsquedas de marca que habrían convertido igual.",
+      a: "Separar productos por margen, sacar el tráfico de marca de la prospección y corregir los títulos del feed.",
+      m: [["ROAS", "2,9× → 4,2×"], ["Ingresos por anuncios", "+45%"]] },
+    { tag: "Software B2B · Captación de leads · Google Search", period: "100 días", t: "Menos leads, mejores leads",
+      c: "El costo por lead parecía bien, pero ventas decía que la mayoría de las demos pedidas no encajaban.",
+      a: "Segmentar palabras clave por intención de compra, sumar negativas y preguntas de calificación en el formulario.",
+      m: [["Costo por lead", "US$142 → US$87"], ["Leads calificados", "31% → 52%"]] },
+    { tag: "Servicios para el hogar · Leads · Meta Ads", period: "60 días", t: "Convertir leads baratos en trabajos agendados",
+      c: "Los formularios traían muchos contactos, pero pocos atendían el teléfono.",
+      a: "Pasar el flujo a click-to-WhatsApp con un mensaje breve de calificación y acordar con el cliente responder el mismo día.",
+      m: [["Costo por trabajo agendado", "US$64 → US$41"], ["Tasa de agendado", "14% → 23%"]] },
+    { tag: "Belleza · DTC · Meta Ads", period: "6 semanas", t: "Encontrar el ángulo de anuncio que de verdad vende",
+      c: "Tres anuncios casi idénticos llevaban meses corriendo y el rendimiento caía.",
+      a: "Planificar 12 ganchos en 4 ángulos, testearlos en una estructura controlada y escalar solo los ganadores.",
+      m: [["CTR del anuncio ganador", "+58%"], ["Costo por compra", "−24%"], ["Ganchos testeados", "12"]] }
+  ]
+};
+</script>
+
+<script>
+(function () {
+  // Edit these three values to go live.
+  var CONFIG = {
+    bookingUrl: "",              // e.g. your Calendly link
+    email: "ramirogiannasi@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ramiro-giannasi-477391144/"
+  };
+
+  var lang = "en";
+  try {
+    var saved = localStorage.getItem("lang");
+    if (saved === "es" || saved === "en") lang = saved;
+    else if ((navigator.language || "").toLowerCase().indexOf("es") === 0) lang = "es";
+  } catch (e) {
+    if ((navigator.language || "").toLowerCase().indexOf("es") === 0) lang = "es";
+  }
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+  function renderCases() {
+    var d = I18N[lang], list = CASES[lang], html = "";
+    list.forEach(function (k, i) {
+      var metrics = k.m.map(function (x) {
+        return '<div class="metric"><div class="ml">' + esc(x[0]) + '</div><div class="mv">' + esc(x[1]) + '</div></div>';
+      }).join("");
+      html += '<article class="case' + (i === 0 ? ' feature' : '') + '">' +
+        '<div class="case-main">' +
+          '<div class="case-meta"><span class="mono">' + esc(k.tag) + ' · ' + esc(k.period) + '</span><span class="pill">' + esc(d.tag_illustrative) + '</span></div>' +
+          '<h3>' + esc(k.t) + '</h3>' +
+          '<dl><div><dt>' + esc(d.lbl_challenge) + '</dt><dd>' + esc(k.c) + '</dd></div>' +
+          '<div><dt>' + esc(d.lbl_action) + '</dt><dd>' + esc(k.a) + '</dd></div></dl>' +
+        '</div>' +
+        '<div class="metrics">' + metrics + '</div>' +
+      '</article>';
+    });
+    document.getElementById("cases").innerHTML = html;
+  }
+
+  function apply() {
+    var d = I18N[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (d[key] !== undefined) el.textContent = d[key];
+    });
+    document.getElementById("btn-es").setAttribute("aria-pressed", String(lang === "es"));
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(lang === "en"));
+    document.getElementById("foot-left").textContent = d.foot_left;
+    renderCases();
+  }
+
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      lang = b.getAttribute("data-lang");
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+      apply();
+    });
+  });
+
+  // Booking links
+  if (CONFIG.bookingUrl) {
+    document.querySelectorAll(".js-book").forEach(function (a) {
+      a.href = CONFIG.bookingUrl; a.target = "_blank"; a.rel = "noopener noreferrer";
+    });
+    var mainBtn = document.getElementById("book-main");
+    mainBtn.href = CONFIG.bookingUrl; mainBtn.target = "_blank"; mainBtn.rel = "noopener noreferrer"; mainBtn.hidden = false;
+  }
+  if (CONFIG.linkedin) {
+    var li = document.getElementById("foot-li"); li.href = CONFIG.linkedin; li.hidden = false;
+  }
+
+  // Email + copy
+  var mailEl = document.getElementById("mail-text");
+  mailEl.textContent = CONFIG.email;
+  document.getElementById("copy-mail").addEventListener("click", function () {
+    var btn = this, d = I18N[lang];
+    function done() { btn.textContent = d.copied; setTimeout(function () { btn.textContent = I18N[lang].copy; }, 1600); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(mailEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+    try {
+      navigator.clipboard.writeText(CONFIG.email).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
