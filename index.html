@@ -358,7 +358,6 @@ footer a:hover { color: var(--ink); }
         <div class="eyebrow" data-i18n="cases_eyebrow"></div>
         <h2 data-i18n="cases_h2"></h2>
       </div>
-      <div class="notice" data-i18n="cases_note"></div>
       <div class="cases" id="cases"></div>
     </div>
   </section>
@@ -462,7 +461,7 @@ var I18N = {
     hero_sub: "I define the strategy, run the campaigns and measure every result against your business goals. You work directly with me, with no intermediaries.",
     hero_secondary: "See cases",
     hero_note: "No cost. No access to your accounts needed.",
-    ro_label: "Sample monthly report", tag_illustrative: "Illustrative", tag_real: "Real case",
+    ro_label: "Sample monthly report", tag_illustrative: "Illustrative", tag_real: "Real client",
     ro_spend_v: "$12,400", ro_spend: "Spend this month", ro_sales_v: "$38,440", ro_sales: "Attributed sales", ro_roas_v: "3.1×",
     ro_weeks: "Weekly ROAS, last 8 weeks", ro_lo: "1.8×", ro_hi: "3.1×",
     tools_label: "Platforms and tools",
@@ -477,8 +476,7 @@ var I18N = {
     g_roas: "Return on ad spend: sales generated for every dollar invested.",
     g_cpa: "Cost per acquisition: what it costs to win a sale or a customer.",
     g_cpl: "Cost per lead: what it costs to get an inquiry from a potential customer.",
-    cases_eyebrow: "Cases", cases_h2: "One real case and four reference scenarios.",
-    cases_note: "The first case is real. The other four are illustrative scenarios built from common ad account situations, and are labeled as such.",
+    cases_eyebrow: "Cases", cases_h2: "Accounts I have worked on.",
     lbl_challenge: "Situation", lbl_action: "Approach",
     lbl_best: "Best suited for",
     svc_eyebrow: "Services", svc_h2: "Services based on your starting point.",
@@ -516,7 +514,7 @@ var I18N = {
     hero_sub: "Defino la estrategia, administro las campañas y mido cada resultado en relación con tus objetivos de negocio. Trabajás directamente conmigo, sin intermediarios.",
     hero_secondary: "Ver casos",
     hero_note: "Sin costo. No necesito acceso a tus cuentas.",
-    ro_label: "Ejemplo de informe mensual", tag_illustrative: "Ilustrativo", tag_real: "Caso real",
+    ro_label: "Ejemplo de informe mensual", tag_illustrative: "Ilustrativo", tag_real: "Cliente real",
     ro_spend_v: "US$12.400", ro_spend: "Inversión del mes", ro_sales_v: "US$38.440", ro_sales: "Ventas atribuidas", ro_roas_v: "3,1×",
     ro_weeks: "ROAS semanal, últimas 8 semanas", ro_lo: "1,8×", ro_hi: "3,1×",
     tools_label: "Plataformas y herramientas",
@@ -531,8 +529,7 @@ var I18N = {
     g_roas: "Retorno de la inversión publicitaria: ventas generadas por cada peso o dólar invertido.",
     g_cpa: "Costo por adquisición: lo que cuesta conseguir una venta o un cliente.",
     g_cpl: "Costo por contacto: lo que cuesta conseguir la consulta de un posible cliente.",
-    cases_eyebrow: "Casos", cases_h2: "Un caso real y cuatro escenarios de referencia.",
-    cases_note: "El primero es un caso real. Los otros cuatro son escenarios ilustrativos, construidos a partir de situaciones habituales en cuentas publicitarias, y están identificados como tales.",
+    cases_eyebrow: "Casos", cases_h2: "Cuentas en las que trabajé.",
     lbl_challenge: "Situación", lbl_action: "Enfoque",
     lbl_best: "Indicado para",
     svc_eyebrow: "Servicios", svc_h2: "Servicios según tu punto de partida.",
@@ -566,45 +563,37 @@ var I18N = {
 var CASES = {
   en: [
     { real: true, tag: "Healthcare · Eye clinic · Google Ads and Meta Ads", period: "2 months", t: "Eye clinic: +12% in clients in two months",
-      d: "Real client in the healthcare sector. I restructured the audiences, launched new retargeting campaigns and made the lead form more specific. In two months, the clinic increased its number of clients by 12%.",
+      d: "I restructured the audiences, launched new retargeting campaigns and made the lead form more specific. In two months, the clinic increased its number of clients by 12%.",
       m: [["Client growth", "+12%"], ["Period", "2 months"]] },
-    { tag: "Beverages · Ecommerce · Meta Ads", period: "90 days", t: "Electrolyte drink: from first purchase to repeat purchase",
-      c: "ROAS stayed near 1.8× because most customers bought a single pack and did not buy again.",
-      a: "Introduce packs and subscription, tailor the ads to specific consumption moments (training, heat, long days) and separate campaigns for new and returning customers.",
-      m: [["ROAS", "1.8× → 3.1×"], ["Cost per purchase", "−32%"], ["Average order value", "+17%"]] },
-    { tag: "Home goods · Ecommerce · Google Shopping and Performance Max", period: "120 days", t: "Home goods: investment guided by margin",
-      c: "Much of the spend went to best sellers with low margins and to brand searches that would have converted anyway.",
-      a: "Group products by margin, separate brand campaigns from acquisition campaigns and fix the product catalog titles.",
-      m: [["ROAS", "2.9× → 4.2×"], ["Revenue from ads, at equal spend", "+45%"]] },
-    { tag: "B2B software · Lead generation · Google Search", period: "100 days", t: "B2B software: fewer inquiries, better qualified",
-      c: "Cost per lead looked reasonable, but the sales team reported that most requested demos did not fit the customer profile.",
-      a: "Segment keywords by buying intent, add negative keywords and add qualifying questions to the form.",
-      m: [["Cost per lead", "$142 → $87"], ["Qualified leads", "31% → 52%"]] },
-    { tag: "Beauty · Direct to consumer · Meta Ads", period: "6 weeks", t: "Beauty: which message converts best",
-      c: "Three nearly identical ads had been running for months and their performance was declining.",
-      a: "Define 12 message variants across 4 angles, test them in a controlled structure and scale only those that work.",
-      m: [["Click-through rate of winning ad", "+58%"], ["Cost per purchase", "−24%"], ["Variants tested", "12"]] }
+    { real: true, tag: "Travel insurance · Meta Ads · Mexico", period: "", t: "Travel insurance: direct-to-consumer sales in Mexico",
+      d: "Meta Ads campaign management for direct-to-consumer sales of travel insurance in Mexico.",
+      m: [["Platform", "Meta Ads"], ["Market", "Mexico"]] },
+    { real: true, tag: "Health · Google Ads and Meta Ads · Latin America", period: "", t: "Employee assistance program across Latin America",
+      d: "Google Ads search campaign management in several countries of the region, with keyword cleanup and a staged review of the account structure, plus Meta Ads campaigns for Costa Rica.",
+      m: [["Platforms", "Google and Meta"], ["Scope", "Several countries"]] },
+    { real: true, tag: "Workspaces · Google Ads and LinkedIn Ads", period: "", t: "Workspaces: account audit and lead generation",
+      d: "Full audit of the Google Ads account, lead generation campaigns on LinkedIn with native forms, and a retargeting campaign.",
+      m: [["Platforms", "Google and LinkedIn"], ["Focus", "Lead generation"]] },
+    { real: true, tag: "Real estate · Google Ads", period: "", t: "Real estate network: Google Ads for offices and agents",
+      d: "Google Ads account management for a real estate network with franchised offices and agents, including a full account audit.",
+      m: [["Platform", "Google Ads"], ["Scope", "Office network"]] }
   ],
   es: [
     { real: true, tag: "Salud · Clínica oftalmológica · Google Ads y Meta Ads", period: "2 meses", t: "Clínica oftalmológica: +12% de clientes en dos meses",
-      d: "Cliente real del sector salud. Reestructuré las audiencias, lancé nuevas campañas de remarketing y ajusté el formulario para que fuera más específico. En dos meses, la clínica aumentó un 12% su cantidad de clientes.",
+      d: "Reestructuré las audiencias, lancé nuevas campañas de remarketing y ajusté el formulario para que fuera más específico. En dos meses, la clínica aumentó un 12% su cantidad de clientes.",
       m: [["Aumento de clientes", "+12%"], ["Período", "2 meses"]] },
-    { tag: "Bebidas · Ecommerce · Meta Ads", period: "90 días", t: "Bebida con electrolitos: de la primera compra a la recompra",
-      c: "El ROAS se mantenía cerca de 1,8× porque la mayoría de los clientes compraba un solo pack y no volvía a comprar.",
-      a: "Incorporar packs y suscripción, orientar los anuncios a situaciones de consumo concretas (entrenamiento, calor, jornadas largas) y separar las campañas de clientes nuevos y recurrentes.",
-      m: [["ROAS", "1,8× → 3,1×"], ["Costo por compra", "−32%"], ["Valor promedio del pedido", "+17%"]] },
-    { tag: "Hogar · Ecommerce · Google Shopping y Performance Max", period: "120 días", t: "Hogar: inversión orientada al margen",
-      c: "Gran parte de la inversión se destinaba a los productos más vendidos, que tenían márgenes bajos, y a búsquedas de marca que habrían convertido de todos modos.",
-      a: "Agrupar los productos por margen, separar las campañas de marca de las de captación y corregir los títulos del catálogo de productos.",
-      m: [["ROAS", "2,9× → 4,2×"], ["Ingresos por anuncios, a igual inversión", "+45%"]] },
-    { tag: "Software B2B · Generación de contactos · Google Search", period: "100 días", t: "Software B2B: menos consultas, mejor calificadas",
-      c: "El costo por contacto parecía razonable, pero el equipo comercial indicaba que la mayoría de las demostraciones solicitadas no encajaban con el perfil de cliente.",
-      a: "Segmentar las palabras clave por intención de compra, sumar exclusiones y agregar preguntas de calificación al formulario.",
-      m: [["Costo por contacto", "US$142 → US$87"], ["Contactos calificados", "31% → 52%"]] },
-    { tag: "Belleza · Venta directa · Meta Ads", period: "6 semanas", t: "Belleza: qué mensaje convierte mejor",
-      c: "Tres anuncios casi idénticos llevaban meses en circulación y su rendimiento venía cayendo.",
-      a: "Definir 12 variantes de mensaje en 4 enfoques, probarlas en una estructura controlada y escalar solo las que funcionan.",
-      m: [["Tasa de clics del anuncio ganador", "+58%"], ["Costo por compra", "−24%"], ["Variantes probadas", "12"]] }
+    { real: true, tag: "Seguros de viaje · Meta Ads · México", period: "", t: "Seguros de viaje: venta directa al consumidor en México",
+      d: "Gestión de campañas en Meta Ads para la venta directa de seguros de viaje al consumidor final en México.",
+      m: [["Plataforma", "Meta Ads"], ["Mercado", "México"]] },
+    { real: true, tag: "Salud · Google Ads y Meta Ads · Latinoamérica", period: "", t: "Programa de asistencia al empleado en Latinoamérica",
+      d: "Gestión de campañas de búsqueda en Google Ads en varios países de la región, con depuración de palabras clave y revisión de la estructura por etapas, y campañas en Meta Ads para Costa Rica.",
+      m: [["Plataformas", "Google y Meta"], ["Alcance", "Varios países"]] },
+    { real: true, tag: "Espacios de trabajo · Google Ads y LinkedIn Ads", period: "", t: "Espacios de trabajo: auditoría y generación de contactos",
+      d: "Auditoría completa de la cuenta de Google Ads, campañas de generación de contactos en LinkedIn con formulario nativo y una campaña de remarketing.",
+      m: [["Plataformas", "Google y LinkedIn"], ["Foco", "Contactos"]] },
+    { real: true, tag: "Inmobiliario · Google Ads", period: "", t: "Red inmobiliaria: Google Ads para oficinas y agentes",
+      d: "Gestión de la cuenta de Google Ads de una red inmobiliaria con oficinas y agentes franquiciados, incluida una auditoría completa de la cuenta.",
+      m: [["Plataforma", "Google Ads"], ["Alcance", "Red de oficinas"]] }
   ]
 };
 
@@ -645,7 +634,7 @@ var CASES = {
           '<div><dt>' + esc(d.lbl_action) + '</dt><dd>' + esc(k.a) + '</dd></div></dl>';
       html += '<article class="case' + (i === 0 ? ' feature' : '') + '">' +
         '<div class="case-main">' +
-          '<div class="case-meta"><span class="mono">' + esc(k.tag) + ' · ' + esc(k.period) + '</span>' + pill + '</div>' +
+          '<div class="case-meta"><span class="mono">' + esc(k.tag) + (k.period ? ' · ' + esc(k.period) : '') + '</span>' + pill + '</div>' +
           '<h3>' + esc(k.t) + '</h3>' + body +
         '</div>' +
         '<div class="metrics">' + metrics + '</div>' +
