@@ -565,35 +565,35 @@ var CASES = {
     { real: true, tag: "Healthcare · Eye clinic · Google Ads and Meta Ads", period: "2 months", t: "Eye clinic: +12% in clients in two months",
       d: "I restructured the audiences, launched new retargeting campaigns and made the lead form more specific. In two months, the clinic increased its number of clients by 12%.",
       m: [["Client growth", "+12%"], ["Period", "2 months"]] },
-    { real: true, tag: "Travel insurance · Meta Ads · Mexico", period: "", t: "Travel insurance: direct-to-consumer sales in Mexico",
-      d: "Meta Ads campaign management for direct-to-consumer sales of travel insurance in Mexico.",
-      m: [["Platform", "Meta Ads"], ["Market", "Mexico"]] },
-    { real: true, tag: "Health · Google Ads and Meta Ads · Latin America", period: "", t: "Employee assistance program across Latin America",
-      d: "Google Ads search campaign management in several countries of the region, with keyword cleanup and a staged review of the account structure, plus Meta Ads campaigns for Costa Rica.",
-      m: [["Platforms", "Google and Meta"], ["Scope", "Several countries"]] },
-    { real: true, tag: "Workspaces · Google Ads and LinkedIn Ads", period: "", t: "Workspaces: account audit and lead generation",
-      d: "Full audit of the Google Ads account, lead generation campaigns on LinkedIn with native forms, and a retargeting campaign.",
-      m: [["Platforms", "Google and LinkedIn"], ["Focus", "Lead generation"]] },
-    { real: true, tag: "Real estate · Google Ads", period: "", t: "Real estate network: Google Ads for offices and agents",
-      d: "Google Ads account management for a real estate network with franchised offices and agents, including a full account audit.",
-      m: [["Platform", "Google Ads"], ["Scope", "Office network"]] }
+    { tag: "Energy drinks · Ecommerce · Meta Ads", period: "", t: "Energy drink brand: online sales",
+      d: "Meta Ads campaigns for the online sales of an energy drink brand.",
+      m: [["Platform", "Meta Ads"], ["Objective", "Online sales"]] },
+    { tag: "Apparel · Ecommerce · Meta Ads and Google Ads", period: "", t: "Apparel brand: acquisition and retargeting",
+      d: "Acquisition and retargeting campaigns on Meta and Google for a clothing brand with an online store.",
+      m: [["Platforms", "Meta and Google"], ["Objective", "Online sales"]] },
+    { tag: "International insurance · Meta Ads", period: "", t: "International insurance: customer acquisition",
+      d: "Meta Ads campaigns to generate leads for international insurance.",
+      m: [["Platform", "Meta Ads"], ["Objective", "Leads"]] },
+    { tag: "Healthcare · Ecommerce · Google Ads and Meta Ads", period: "", t: "Healthcare products ecommerce: online sales",
+      d: "Google and Meta campaigns focused on sales for an ecommerce store of healthcare products.",
+      m: [["Platforms", "Google and Meta"], ["Objective", "Online sales"]] }
   ],
   es: [
     { real: true, tag: "Salud · Clínica oftalmológica · Google Ads y Meta Ads", period: "2 meses", t: "Clínica oftalmológica: +12% de clientes en dos meses",
       d: "Reestructuré las audiencias, lancé nuevas campañas de remarketing y ajusté el formulario para que fuera más específico. En dos meses, la clínica aumentó un 12% su cantidad de clientes.",
       m: [["Aumento de clientes", "+12%"], ["Período", "2 meses"]] },
-    { real: true, tag: "Seguros de viaje · Meta Ads · México", period: "", t: "Seguros de viaje: venta directa al consumidor en México",
-      d: "Gestión de campañas en Meta Ads para la venta directa de seguros de viaje al consumidor final en México.",
-      m: [["Plataforma", "Meta Ads"], ["Mercado", "México"]] },
-    { real: true, tag: "Salud · Google Ads y Meta Ads · Latinoamérica", period: "", t: "Programa de asistencia al empleado en Latinoamérica",
-      d: "Gestión de campañas de búsqueda en Google Ads en varios países de la región, con depuración de palabras clave y revisión de la estructura por etapas, y campañas en Meta Ads para Costa Rica.",
-      m: [["Plataformas", "Google y Meta"], ["Alcance", "Varios países"]] },
-    { real: true, tag: "Espacios de trabajo · Google Ads y LinkedIn Ads", period: "", t: "Espacios de trabajo: auditoría y generación de contactos",
-      d: "Auditoría completa de la cuenta de Google Ads, campañas de generación de contactos en LinkedIn con formulario nativo y una campaña de remarketing.",
-      m: [["Plataformas", "Google y LinkedIn"], ["Foco", "Contactos"]] },
-    { real: true, tag: "Inmobiliario · Google Ads", period: "", t: "Red inmobiliaria: Google Ads para oficinas y agentes",
-      d: "Gestión de la cuenta de Google Ads de una red inmobiliaria con oficinas y agentes franquiciados, incluida una auditoría completa de la cuenta.",
-      m: [["Plataforma", "Google Ads"], ["Alcance", "Red de oficinas"]] }
+    { tag: "Bebidas energéticas · Ecommerce · Meta Ads", period: "", t: "Marca de bebidas energéticas: ventas online",
+      d: "Campañas en Meta Ads para las ventas online de una marca de bebidas energéticas.",
+      m: [["Plataforma", "Meta Ads"], ["Objetivo", "Ventas online"]] },
+    { tag: "Indumentaria · Ecommerce · Meta Ads y Google Ads", period: "", t: "Marca de ropa: captación y remarketing",
+      d: "Campañas de captación y remarketing en Meta y Google para una marca de ropa con tienda online.",
+      m: [["Plataformas", "Meta y Google"], ["Objetivo", "Ventas online"]] },
+    { tag: "Seguros internacionales · Meta Ads", period: "", t: "Seguros internacionales: captación de clientes",
+      d: "Campañas en Meta Ads para generar contactos de seguros internacionales.",
+      m: [["Plataforma", "Meta Ads"], ["Objetivo", "Contactos"]] },
+    { tag: "Salud · Ecommerce · Google Ads y Meta Ads", period: "", t: "Ecommerce de productos de salud: ventas online",
+      d: "Campañas en Google y Meta orientadas a ventas para un ecommerce de productos de salud.",
+      m: [["Plataformas", "Google y Meta"], ["Objetivo", "Ventas online"]] }
   ]
 };
 
@@ -625,9 +625,7 @@ var CASES = {
       var metrics = k.m.map(function (x) {
         return '<div class="metric"><div class="ml">' + esc(x[0]) + '</div><div class="mv">' + esc(x[1]) + '</div></div>';
       }).join("");
-      var pill = k.real
-        ? '<span class="pill real">' + esc(d.tag_real) + '</span>'
-        : '<span class="pill">' + esc(d.tag_illustrative) + '</span>';
+      var pill = k.real ? '<span class="pill real">' + esc(d.tag_real) + '</span>' : '';
       var body = k.d
         ? '<p class="case-desc">' + esc(k.d) + '</p>'
         : '<dl><div><dt>' + esc(d.lbl_challenge) + '</dt><dd>' + esc(k.c) + '</dd></div>' +
